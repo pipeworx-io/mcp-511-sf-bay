@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-511-sf-bay",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "511 SF Bay Transit MCP — live departures, vehicle positions and service alerts for every transit operator in the San Francisco Bay Area, from the regional 511.org open-data API run by the Metropolitan Transportation Commission.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-511-sf-bay": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "511-sf-bay"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-511-sf-bay.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/511-sf-bay",
   "pipeworx": {
-    "sourceHash": "v1-9c3902587f0a74950f4057c74ae91e55396915606cb6d03a5dbecc13ec51f8a2",
-    "sourceCommit": "71f5325b13bb0ea0de2f0f7207885962ec91a484"
+    "mode": "gateway",
+    "slug": "511-sf-bay",
+    "gatewaySlug": "511-sf-bay",
+    "sourceHash": "v1-3a278136237b6490f4d00c58434c34e154f3bd4586e72cafdf3b0590d315246f",
+    "sourceCommit": "c6136b81713e72ccb22977ca0c0cd981f8c3f081"
   }
 }
